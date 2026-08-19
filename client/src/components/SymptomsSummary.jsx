@@ -1,4 +1,4 @@
-import symptomLabels from "../data/symptomLabels";
+import symptomLabels from "../data/SymptomLabels";
 
 function SymptomsSummary({ symptoms }) {
   if (symptoms.length === 0) return null;
