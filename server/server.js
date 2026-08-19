@@ -4,20 +4,24 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const analysisRoutes = require("./routes/analysisRoutes");
 const historyRoutes = require("./routes/historyRoutes");
-const appointmentRoutes = require("./routes/appointmentRoutes")
-const app = express();
+const appointmentRoutes = require("./routes/appointmentRoutes");
 const wellbeingRoutes = require("./routes/wellbeingRoutes");
 const interactionRoutes = require("./routes/interactionRoutes");
 const pillRoutes = require("./routes/pillRoutes");
-const drugRoutes = require("./routes/drugRoutes")
+const drugRoutes = require("./routes/drugRoutes");
 const adminRoutes = require("./routes/adminRoutes");
-const PORT = 5000;
+
+const app = express();
+
+// Utilisation du PORT dynamique de Render ou 5000 en local
+const PORT = process.env.PORT || 5000;
 
 // ==================================================
 // CONNEXION MONGODB
 // ==================================================
-
-const MONGO_URI = "mongodb://127.0.0.1:27017/medical_assistant";
+// Récupère l'URL cloud en production ou fallback en local
+const MONGO_URI =
+  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/medical_assistant";
 
 mongoose
   .connect(MONGO_URI)
@@ -29,7 +33,15 @@ mongoose
   });
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://front-end-theta-three-58.vercel.app", // ⚠️ Sans le slash '/' à la fin !
+      "http://localhost:5173",
+    ],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 // Routes
@@ -42,6 +54,7 @@ app.use("/api/appointments", appointmentRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/pills", pillRoutes);
 app.use("/api/interactions", interactionRoutes);
+
 // Route de test
 app.get("/", (req, res) => {
   res.json({
@@ -50,5 +63,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Serveur lancé sur http://localhost:${PORT}`);
+  console.log(`Serveur lancé sur le port ${PORT}`);
 });
