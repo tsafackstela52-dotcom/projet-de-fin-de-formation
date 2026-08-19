@@ -39,12 +39,15 @@ connectDB()
 app.use(
   cors({
     origin: [
-      "https://front-end-theta-three-58.vercel.app", // ⚠️ Sans le slash '/' à la fin !
+      "https://front-end-theta-three-58.vercel.app",
       "http://localhost:5173",
+      "http://localhost:5174",
+      "http://localhost:5175", // ← ajoute le port réellement utilisé
     ],
     credentials: true,
   }),
 );
+
 app.use(express.json());
 
 // Routes
