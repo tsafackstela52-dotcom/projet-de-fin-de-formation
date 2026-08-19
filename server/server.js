@@ -17,19 +17,22 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ==================================================
-// CONNEXION MONGODB
+// CONNEXION MONGODB (via config/db.js)
 // ==================================================
-// Récupère l'URL cloud en production ou fallback en local
-const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/medical_assistant";
+const connectDB = require("./config/db");
 
-mongoose
-  .connect(MONGO_URI)
+// Démarre la connexion à la base puis l'application
+connectDB()
   .then(() => {
-    console.log("Connecté à MongoDB");
+    console.log("Démarrage du serveur après connexion DB réussie...");
+
+    app.listen(PORT, () => {
+      console.log(`Serveur lancé sur le port ${PORT}`);
+    });
   })
-  .catch((error) => {
-    console.error("Erreur de connexion à MongoDB :", error.message);
+  .catch((err) => {
+    console.error("Impossible de démarrer le serveur: erreur de connexion DB", err.message);
+    process.exit(1);
   });
 
 // Middlewares
@@ -62,6 +65,4 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Serveur lancé sur le port ${PORT}`);
-});
+// Note: l'appel à `app.listen` est effectué après connexion DB
