@@ -4,7 +4,7 @@
 
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import symptomLabels from "../data/symptomLabels";
+import symptomLabels from "../data/SymptomLabels";
 import symptomToMaladies from "../data/symptomToMaladies";
 import maladiesInfo from "../data/maladiesInfo";
 

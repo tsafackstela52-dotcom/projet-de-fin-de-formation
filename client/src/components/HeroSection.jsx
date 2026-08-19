@@ -18,13 +18,6 @@ function HeroSection() {
     <section className="bg-[#F6F7F2] px-6 pt-16 pb-20">
       <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <div
-            className="text-xs tracking-widest uppercase text-[#C98A3A] mb-4"
-            style={{ fontFamily: "Manrope, sans-serif" }}
-          >
-            Assistant de triage médical
-          </div>
-
           <h1
             className="text-4xl md:text-5xl font-medium leading-tight text-[#1F3A34] mb-5"
             style={{ fontFamily: "Newsreader, serif" }}
