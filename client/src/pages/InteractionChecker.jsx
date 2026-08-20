@@ -39,7 +39,7 @@ function InteractionChecker() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/interactions/drugs")
+    fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/interactions/drugs")
       .then((r) => r.json())
       .then((data) => setDrugs(data.drugs || []));
   }, []);
@@ -59,7 +59,7 @@ function InteractionChecker() {
 
     try {
       const response = await fetch(
-        "https://projet-de-fin-de-formation-0opo.onrename.com/api/interactions/check",
+        "https://projet-de-fin-de-formation-0opo.onrender.com/api/interactions/check",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

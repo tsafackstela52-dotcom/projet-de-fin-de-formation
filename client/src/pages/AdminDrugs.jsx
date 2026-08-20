@@ -46,7 +46,7 @@ function AdminDrugs() {
 
   const fetchDrugs = async () => {
     try {
-      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/drugs", {
+      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/admin/drugs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -108,8 +108,8 @@ function AdminDrugs() {
 
     try {
       const url = editingId
-        ? `https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/drugs/${editingId}`
-        : "https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/drugs";
+        ? `https://projet-de-fin-de-formation-0opo.onrender.com/api/admin/drugs/${editingId}`
+        : "https://projet-de-fin-de-formation-0opo.onrender.com/api/admin/drugs";
 
       const response = await fetch(url, {
         method: editingId ? "PUT" : "POST",
@@ -134,7 +134,7 @@ function AdminDrugs() {
     if (!confirm("Supprimer ce médicament ?")) return;
 
     try {
-      await fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/drugs/${drugId}`, {
+      await fetch(`https://projet-de-fin-de-formation-0opo.onrender.com/api/admin/drugs/${drugId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -43,7 +43,7 @@ export function Assistant() {
   // ==================================================
   const saveToHistory = async (data, descriptionUtilisee) => {
     try {
-      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/history", {
+      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export function Assistant() {
     setError("");
 
     try {
-      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/analysis/start", {
+      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/analysis/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ description: text }),
@@ -120,7 +120,7 @@ export function Assistant() {
 
     try {
       const response = await fetch(
-        "https://projet-de-fin-de-formation-0opo.onrename.com/api/analysis/answer",
+        "https://projet-de-fin-de-formation-0opo.onrender.com/api/analysis/answer",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

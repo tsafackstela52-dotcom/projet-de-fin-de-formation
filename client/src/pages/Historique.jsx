@@ -55,7 +55,7 @@ export function Historique() {
   useEffect(() => {
     const fetchHistorique = async () => {
       try {
-        const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/history", {
+        const response = await fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/history", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -94,7 +94,7 @@ export function Historique() {
 
     setDeletingId(id);
     try {
-      const response = await fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/history/${id}`, {
+      const response = await fetch(`https://projet-de-fin-de-formation-0opo.onrender.com/api/history/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

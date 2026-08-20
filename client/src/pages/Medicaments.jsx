@@ -14,7 +14,7 @@ function Medicaments() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/drugs")
+    fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/drugs")
       .then((r) => r.json())
       .then((data) => setDrugs(data.drugs || []))
       .finally(() => setLoading(false));

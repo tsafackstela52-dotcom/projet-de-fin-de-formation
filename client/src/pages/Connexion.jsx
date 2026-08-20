@@ -34,7 +34,7 @@ function Connexion() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/auth/connexion", {
+      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/auth/connexion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, motDePasse }),

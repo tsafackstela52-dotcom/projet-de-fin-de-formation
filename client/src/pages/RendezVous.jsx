@@ -105,7 +105,7 @@ function RendezVous() {
     setError("");
 
     try {
-      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/appointments", {
+      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrender.com/api/appointments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

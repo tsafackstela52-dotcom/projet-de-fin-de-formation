@@ -73,7 +73,7 @@ export function AdminDashboard() {
     try {
       const results = await Promise.all(
         STATS_CONFIG.map((s) =>
-          fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/${s.endpoint}`, {
+          fetch(`https://projet-de-fin-de-formation-0opo.onrender.com/api/admin/${s.endpoint}`, {
             headers: { Authorization: `Bearer ${token}` },
           }).then((r) => {
             if (!r.ok) throw new Error(`Erreur serveur (${r.status})`);

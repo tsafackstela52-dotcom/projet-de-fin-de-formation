@@ -14,7 +14,7 @@ function WellbeingDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/wellbeing/${id}`)
+    fetch(`https://projet-de-fin-de-formation-0opo.onrender.com/api/wellbeing/${id}`)
       .then((r) => r.json())
       .then((data) => setArticle(data.article || null))
       .finally(() => setLoading(false));
