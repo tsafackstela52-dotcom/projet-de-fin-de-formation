@@ -53,10 +53,10 @@ function TableauDeBord() {
     const fetchData = async () => {
       try {
         const [histRes, apptRes] = await Promise.all([
-          fetch("http://localhost:5000/api/history", {
+          fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/history", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("http://localhost:5000/api/appointments", {
+          fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/appointments", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

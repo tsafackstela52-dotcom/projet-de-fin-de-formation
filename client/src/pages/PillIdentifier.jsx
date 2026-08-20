@@ -21,7 +21,7 @@ function PillIdentifier() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/pills/options")
+    fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/pills/options")
       .then((r) => r.json())
       .then((data) => {
         setFormes(data.formes || []);
@@ -40,7 +40,7 @@ function PillIdentifier() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/pills/search?${params}`,
+        `https://projet-de-fin-de-formation-0opo.onrename.com/api/pills/search?${params}`,
       );
       const data = await response.json();
       setResults(data.results || []);

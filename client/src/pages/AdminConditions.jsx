@@ -51,7 +51,7 @@ function AdminConditions() {
   const fetchConditions = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/conditions",
+        "https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/conditions",
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -109,8 +109,8 @@ function AdminConditions() {
 
     try {
       const url = editingId
-        ? `http://localhost:5000/api/admin/conditions/${editingId}`
-        : "http://localhost:5000/api/admin/conditions";
+        ? `https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/conditions/${editingId}`
+        : "https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/conditions";
 
       const response = await fetch(url, {
         method: editingId ? "PUT" : "POST",
@@ -135,7 +135,7 @@ function AdminConditions() {
     if (!confirm("Supprimer cette maladie ?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/admin/conditions/${conditionId}`, {
+      await fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/conditions/${conditionId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

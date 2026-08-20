@@ -22,7 +22,7 @@ function Wellbeing() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/wellbeing?categorie=${activeCategorie}`)
+    fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/wellbeing?categorie=${activeCategorie}`)
       .then((r) => r.json())
       .then((data) => setArticles(data.articles || []))
       .finally(() => setLoading(false));

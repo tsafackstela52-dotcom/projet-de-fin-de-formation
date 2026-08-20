@@ -25,7 +25,7 @@ function AdminQuestions() {
   const fetchQuestions = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/questions",
+        "https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/questions",
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -80,8 +80,8 @@ function AdminQuestions() {
 
     try {
       const url = editingId
-        ? `http://localhost:5000/api/admin/questions/${editingId}`
-        : "http://localhost:5000/api/admin/questions";
+        ? `https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/questions/${editingId}`
+        : "https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/questions";
 
       const response = await fetch(url, {
         method: editingId ? "PUT" : "POST",
@@ -106,7 +106,7 @@ function AdminQuestions() {
     if (!confirm("Supprimer cette question ?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/admin/questions/${questionId}`, {
+      await fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/questions/${questionId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

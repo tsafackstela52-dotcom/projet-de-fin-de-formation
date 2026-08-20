@@ -14,7 +14,7 @@ const bcrypt = require("bcrypt");
 
 const User = require("./models/User");
 
-const MONGO_URI = "mongodb://127.0.0.1:27017/medical_assistant";
+const MONGO_URI = "mongodb+srv://stela:aIeN9vygvP8oxjxm@stela.jpxlz6u.mongodb.net/?appName=stela";
 
 // ==================================================
 // MODIFIEZ CES IDENTIFIANTS AVANT D'EXECUTER
@@ -65,3 +65,4 @@ async function createAdmin() {
 
 createAdmin();
 // 24oztgikjOsd4BUG
+// https://justefrontend.vercel.app/assistant

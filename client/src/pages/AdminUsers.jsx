@@ -24,7 +24,7 @@ function AdminUsers() {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/users", {
+      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -46,7 +46,7 @@ function AdminUsers() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/${userItem._id}/role`,
+        `https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/users/${userItem._id}/role`,
         {
           method: "PUT",
           headers: {
@@ -74,7 +74,7 @@ function AdminUsers() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/${userItem._id}`,
+        `https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/users/${userItem._id}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },

@@ -23,7 +23,7 @@ function AdminSymptoms() {
 
   const fetchSymptoms = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/symptoms", {
+      const response = await fetch("https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/symptoms", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -72,8 +72,8 @@ function AdminSymptoms() {
 
     try {
       const url = editingId
-        ? `http://localhost:5000/api/admin/symptoms/${editingId}`
-        : "http://localhost:5000/api/admin/symptoms";
+        ? `https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/symptoms/${editingId}`
+        : "https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/symptoms";
 
       const response = await fetch(url, {
         method: editingId ? "PUT" : "POST",
@@ -98,7 +98,7 @@ function AdminSymptoms() {
     if (!confirm("Supprimer ce symptôme ?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/admin/symptoms/${symptomId}`, {
+      await fetch(`https://projet-de-fin-de-formation-0opo.onrename.com/api/admin/symptoms/${symptomId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
